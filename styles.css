@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#f7f7f7;
+
+    color:#333;
+
+}
+
+header{
+
+    background:#111;
+
+    padding:20px 0;
+
+    position:fixed;
+
+    width:100%;
+
+    z-index:999;
+
+}
+
+nav{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+nav h1{
+
+    color:gold;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+}
+
+nav ul li{
+
+    margin-left:25px;
+
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:gold;
+
+}
+
+.hero{
+
+    height:100vh;
+
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1600");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.hero h2{
+
+    font-size:55px;
+
+    color:white;
+
+}
+
+.hero p{
+
+    color:white;
+
+    margin:20px 0;
+
+    font-size:20px;
+
+}
+
+.boton{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:gold;
+
+    color:black;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+}
+
+.productos{
+
+    padding:100px 10%;
+
+}
+
+.productos h2{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+    font-size:40px;
+
+}
+
+.contenedor{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+}
+
+.card h3{
+
+    padding:15px;
+
+}
+
+.card p{
+
+    padding:0 15px;
+
+}
+
+.card span{
+
+    display:block;
+
+    padding:15px;
+
+    color:crimson;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.nosotros{
+
+    padding:80px 10%;
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.nosotros h2{
+
+    margin-bottom:20px;
+
+}
+
+.contacto{
+
+    padding:100px 10%;
+
+    text-align:center;
+
+}
+
+.contacto h2{
+
+    margin-bottom:20px;
+
+}
+
+.redes{
+
+    margin-top:30px;
+
+}
+
+.redes a{
+
+    display:inline-block;
+
+    margin:10px;
+
+    padding:15px 30px;
+
+    border-radius:40px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+}
+
+.whatsapp{
+
+    background:#25D366;
+
+}
+
+.instagram{
+
+    background:#C13584;
+
+}
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+}
+
+nav ul{
+
+margin-top:15px;
+
+}
+
+.hero h2{
+
+font-size:35px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+}
