@@ -228,7 +228,7 @@ nav ul li a:hover{
 
     background-position:center;
 
-    background-attachment:fixed;
+    background-repeat:no-repeat;
 
 }
 
@@ -1214,5 +1214,18 @@ section{
     background:var(--dorado);
 
     color:var(--negro);
+
+}
+@media (max-width:768px){
+
+    .hero{
+
+        background-position:center center;
+
+        background-size:cover;
+
+        background-attachment:scroll;
+
+    }
 
 }
