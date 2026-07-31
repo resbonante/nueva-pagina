@@ -1,31 +1,100 @@
+/*=========================================================
+                AGORA STORE
+                Styles.css
+=========================================================*/
+
+/*=========================
+        COLORES
+==========================*/
+
+:root{
+
+    --dorado:#D4AF37;
+    --negro:#000000;
+    --blanco:#FFFFFF;
+    --gris:#f5f5f5;
+
+}
+
+/*=========================
+        RESET
+==========================*/
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
 }
 
 body{
 
-    background:#f7f7f7;
+    background:var(--blanco);
 
-    color:#333;
+    color:var(--negro);
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    overflow-x:hidden;
 
 }
+
+/*=========================
+        SCROLL
+==========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--dorado);
+
+    border-radius:30px;
+
+}
+
+/*=========================
+        HEADER
+==========================*/
 
 header{
 
-    background:#111;
-
-    padding:20px 0;
-
     position:fixed;
+
+    top:0;
+
+    left:0;
 
     width:100%;
 
+    background:rgba(0,0,0,.95);
+
     z-index:999;
 
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+
 }
+
+/*=========================
+        NAVBAR
+==========================*/
 
 nav{
 
@@ -39,13 +108,29 @@ nav{
 
     align-items:center;
 
+    padding:20px 0;
+
 }
+
+/*=========================
+        LOGO
+==========================*/
 
 nav h1{
 
-    color:gold;
+    color:var(--dorado);
+
+    font-size:32px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
 
 }
+
+/*=========================
+        MENÚ
+==========================*/
 
 nav ul{
 
@@ -57,36 +142,73 @@ nav ul{
 
 nav ul li{
 
-    margin-left:25px;
+    margin-left:30px;
 
 }
 
 nav ul li a{
 
+    color:var(--blanco);
+
     text-decoration:none;
 
-    color:white;
+    font-size:17px;
 
-    transition:.3s;
+    transition:.4s;
+
+    position:relative;
+
+}
+
+/*=========================
+        LINEA HOVER
+==========================*/
+
+nav ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:2px;
+
+    left:0;
+
+    bottom:-6px;
+
+    background:var(--dorado);
+
+    transition:.4s;
+
+}
+
+nav ul li a:hover::after{
+
+    width:100%;
 
 }
 
 nav ul li a:hover{
 
-    color:gold;
+    color:var(--dorado);
 
 }
+
+.activo{
+
+    color:var(--dorado);
+
+}
+
+/*=========================
+        HERO = Fondo de la página principal
+==========================*/
 
 .hero{
 
     height:100vh;
-
-    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-    url("https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=1600");
-
-    background-size:cover;
-
-    background-position:center;
 
     display:flex;
 
@@ -96,23 +218,71 @@ nav ul li a:hover{
 
     text-align:center;
 
+    background:
+
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+
+    url("Imagenes doña paula/Logo.JPG");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
 }
 
-.hero h2{
+/*=========================
+    CONTENIDO HERO
+==========================*/
 
-    font-size:55px;
+.contenido{
 
-    color:white;
+    width:90%;
+
+    max-width:900px;
 
 }
 
-.hero p{
+.contenido h2{
 
-    color:white;
+    color:var(--dorado);
 
-    margin:20px 0;
+    font-size:70px;
 
-    font-size:20px;
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+}
+
+.contenido p{
+
+    color:var(--blanco);
+
+    font-size:22px;
+
+    margin-bottom:40px;
+
+    line-height:1.6;
+
+}
+
+/*=========================
+        BOTONES HERO
+==========================*/
+
+.hero-botones{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
 
 }
 
@@ -120,123 +290,477 @@ nav ul li a:hover{
 
     display:inline-block;
 
-    padding:15px 35px;
+    padding:15px 40px;
 
-    background:gold;
+    background:var(--dorado);
 
-    color:black;
+    color:var(--negro);
 
     text-decoration:none;
 
-    border-radius:30px;
+    font-size:18px;
 
     font-weight:bold;
 
-}
-
-.productos{
-
-    padding:100px 10%;
-
-}
-
-.productos h2{
-
-    text-align:center;
-
-    margin-bottom:50px;
-
-    font-size:40px;
-
-}
-
-.contenedor{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-}
-
-.card{
-
-    background:white;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    border-radius:50px;
 
     transition:.4s;
 
 }
 
-.card:hover{
+.boton:hover{
 
-    transform:translateY(-10px);
+    background:var(--blanco);
+
+    transform:translateY(-5px);
 
 }
+
+.boton-secundario{
+
+    background:transparent;
+
+    color:var(--blanco);
+
+    border:2px solid var(--dorado);
+
+}
+
+.boton-secundario:hover{
+
+    background:var(--dorado);
+
+    color:var(--negro);
+
+}
+
+/*=========================
+        BANNER
+==========================*/
+
+.banner{
+
+    margin-top:90px;
+
+    height:350px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+
+    url("Imagenes doña paula/envases.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.banner h2{
+
+    color:var(--dorado);
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.banner p{
+
+    color:var(--blanco);
+
+    font-size:20px;
+
+}
+/*=========================================================
+        CATÁLOGO - TARJETAS - BOTONES
+=========================================================*/
+/*=========================
+        SECCIONES
+==========================*/
+
+section{
+
+    padding:90px 8%;
+
+}
+
+h2{
+
+    text-align:center;
+
+    color:var(--dorado);
+
+    font-size:42px;
+
+    margin-bottom:50px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+/*=========================
+        CONTENEDOR
+==========================*/
+
+.contenedor{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+/*=========================
+        TARJETAS
+==========================*/
+
+.card{
+
+    background:var(--blanco);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    position:relative;
+
+}
+
+/*=========================
+        EFECTO BRILLO
+==========================*/
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transition:.8s;
+
+}
+
+.card:hover::before{
+
+    left:150%;
+
+}
+
+/*=========================
+        HOVER CARD
+==========================*/
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.25);
+
+}
+
+/*=========================
+        IMAGEN
+==========================*/
 
 .card img{
 
     width:100%;
 
-    height:300px;
+    height:320px;
 
     object-fit:cover;
 
-}
-
-.card h3{
-
-    padding:15px;
+    transition:.5s;
 
 }
 
-.card p{
+.card:hover img{
 
-    padding:0 15px;
+    transform:scale(1.08);
 
 }
+
+/*=========================
+        CUERPO CARD
+==========================*/
+
+.card-body{
+
+    padding:25px;
+
+}
+
+/*=========================
+        TITULO CARD
+==========================*/
+
+.card-body h3{
+
+    color:var(--negro);
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+}
+
+/*=========================
+        TEXTO
+==========================*/
+
+.card-body p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+/*=========================
+        PRECIO
+==========================*/
 
 .card span{
 
     display:block;
 
-    padding:15px;
+    font-size:28px;
 
-    color:crimson;
-
-    font-size:22px;
+    color:var(--dorado);
 
     font-weight:bold;
 
+    margin-bottom:25px;
+
 }
 
-.nosotros{
+/*=========================
+        BOTÓN CARD
+==========================*/
 
-    padding:80px 10%;
+.boton-card{
 
-    background:#111;
+    display:inline-block;
 
-    color:white;
+    background:var(--dorado);
+
+    color:var(--negro);
+
+    text-decoration:none;
+
+    padding:13px 28px;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+.boton-card:hover{
+
+    background:var(--negro);
+
+    color:var(--dorado);
+
+}
+
+/*=========================
+        DESTACADOS
+==========================*/
+
+.destacados{
+
+    background:#fafafa;
+
+}
+
+.destacados .card{
 
     text-align:center;
 
 }
 
-.nosotros h2{
+.destacados img{
+
+    height:280px;
+
+}
+
+.destacados h3{
+
+    margin-top:15px;
+
+}
+
+/*=========================
+        VENTAJAS
+==========================*/
+
+.ventajas{
+
+    background:var(--blanco);
+
+}
+
+.ventajas .contenedor{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:40px;
+
+}
+
+/*=========================
+        INFO
+==========================*/
+
+.info{
+
+    background:#fafafa;
+
+    padding:45px 30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:1px solid rgba(212,175,55,.20);
+
+}
+
+.info:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+/*=========================
+        ICONOS
+==========================*/
+
+.info i{
+
+    font-size:55px;
+
+    color:var(--dorado);
 
     margin-bottom:20px;
 
 }
 
+.info h3{
+
+    margin-bottom:15px;
+
+    color:var(--negro);
+
+    font-size:24px;
+
+}
+
+.info p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+/*=========================
+        NOSOTROS
+==========================*/
+
+.nosotros{
+
+    background:var(--negro);
+
+    color:var(--blanco);
+
+    text-align:center;
+
+}
+
+.contenido-nosotros{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.contenido-nosotros h2{
+
+    color:var(--dorado);
+
+}
+
+.contenido-nosotros p{
+
+    font-size:20px;
+
+    line-height:2;
+
+}
+/*=========================================================
+        CONTACTO - FOOTER - RESPONSIVE
+=========================================================*/
+/*=========================
+        CONTACTO
+==========================*/
+
 .contacto{
 
-    padding:100px 10%;
+    background:var(--gris);
 
     text-align:center;
 
@@ -244,31 +768,63 @@ nav ul li a:hover{
 
 .contacto h2{
 
-    margin-bottom:20px;
+    color:var(--dorado);
 
 }
+
+.contacto p{
+
+    font-size:20px;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================
+        REDES
+==========================*/
 
 .redes{
 
-    margin-top:30px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
 
 }
 
+/*=========================
+        BOTONES REDES
+==========================*/
+
 .redes a{
-
-    display:inline-block;
-
-    margin:10px;
-
-    padding:15px 30px;
-
-    border-radius:40px;
-
-    color:white;
 
     text-decoration:none;
 
+    padding:16px 35px;
+
+    border-radius:50px;
+
+    color:var(--blanco);
+
     font-size:18px;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+.redes i{
+
+    margin-right:10px;
 
 }
 
@@ -278,48 +834,385 @@ nav ul li a:hover{
 
 }
 
+.whatsapp:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(37,211,102,.35);
+
+}
+
 .instagram{
 
     background:#C13584;
 
 }
 
-footer{
+.instagram:hover{
 
-    background:#111;
+    transform:translateY(-6px);
 
-    color:white;
-
-    text-align:center;
-
-    padding:25px;
+    box-shadow:0 12px 25px rgba(193,53,132,.35);
 
 }
 
-@media(max-width:768px){
+/*=========================
+        FOOTER
+==========================*/
+
+footer{
+
+    background:var(--negro);
+
+    color:var(--blanco);
+
+    padding:45px 10%;
+
+    text-align:center;
+
+}
+
+.footer-contenido h3{
+
+    color:var(--dorado);
+
+    font-size:30px;
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-contenido p{
+
+    margin:10px 0;
+
+}
+
+.footer-contenido hr{
+
+    margin:25px auto;
+
+    width:220px;
+
+    border:none;
+
+    height:2px;
+
+    background:var(--dorado);
+
+}
+
+/*=========================
+        ICONOS FOOTER
+==========================*/
+
+.footer-redes{
+
+    margin:25px 0;
+
+}
+
+.footer-redes a{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:48px;
+
+    height:48px;
+
+    margin:0 10px;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    background:var(--dorado);
+
+    color:var(--negro);
+
+    transition:.4s;
+
+    font-size:22px;
+
+}
+
+.footer-redes a:hover{
+
+    background:var(--blanco);
+
+    transform:rotate(360deg);
+
+}
+
+/*=========================
+        ANIMACIONES
+==========================*/
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero,
+.banner,
+.card,
+.info,
+.nosotros,
+.contacto{
+
+    animation:aparecer .8s ease;
+
+}
+
+/*=========================
+        IMÁGENES
+==========================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/*=========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:992px){
 
 nav{
 
-flex-direction:column;
+    flex-direction:column;
+
+}
+
+nav h1{
+
+    margin-bottom:20px;
 
 }
 
 nav ul{
 
-margin-top:15px;
+    flex-wrap:wrap;
+
+    justify-content:center;
 
 }
 
-.hero h2{
+nav ul li{
 
-font-size:35px;
+    margin:10px 15px;
+
+}
+
+.contenido h2{
+
+    font-size:55px;
 
 }
 
-.hero p{
+.banner h2{
 
-font-size:18px;
+    font-size:45px;
 
 }
+
+}
+
+/*=========================
+        TABLET
+==========================*/
+
+@media(max-width:768px){
+
+.hero{
+
+    background-attachment:scroll;
+
+}
+
+.contenido h2{
+
+    font-size:42px;
+
+}
+
+.contenido p{
+
+    font-size:18px;
+
+}
+
+.hero-botones{
+
+    flex-direction:column;
+
+}
+
+.hero-botones a{
+
+    width:240px;
+
+    margin:auto;
+
+}
+
+.banner{
+
+    height:260px;
+
+}
+
+.banner h2{
+
+    font-size:34px;
+
+}
+
+.banner p{
+
+    font-size:17px;
+
+}
+
+h2{
+
+    font-size:34px;
+
+}
+
+.card img{
+
+    height:260px;
+
+}
+
+.redes{
+
+    flex-direction:column;
+
+}
+
+.redes a{
+
+    width:260px;
+
+}
+
+}
+
+/*=========================
+        MÓVIL
+==========================*/
+
+@media(max-width:480px){
+
+nav{
+
+    width:95%;
+
+}
+
+nav h1{
+
+    font-size:24px;
+
+}
+
+nav ul li{
+
+    margin:8px;
+
+}
+
+nav ul li a{
+
+    font-size:15px;
+
+}
+
+.hero{
+
+    padding:0 20px;
+
+}
+
+.contenido h2{
+
+    font-size:32px;
+
+    letter-spacing:1px;
+
+}
+
+.contenido p{
+
+    font-size:16px;
+
+}
+
+section{
+
+    padding:70px 25px;
+
+}
+
+.card img{
+
+    height:220px;
+
+}
+
+.footer-contenido h3{
+
+    font-size:24px;
+
+}
+
+.footer-redes a{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:18px;
+
+}
+
+}
+
+/*=========================
+        SELECCIÓN
+==========================*/
+
+::selection{
+
+    background:var(--dorado);
+
+    color:var(--negro);
 
 }
