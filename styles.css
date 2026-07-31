@@ -1218,16 +1218,3 @@ section{
     color:var(--negro);
 
 }
-@media (max-width:768px){
-
-    .hero{
-
-        background-position:center center;
-
-        background-size:contain;
-
-        background-attachment:scroll;
-
-    }
-
-}
