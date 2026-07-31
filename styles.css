@@ -222,7 +222,7 @@ nav ul li a:hover{
 
     linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 
-    url("Imagenes doña paula/Logo.png");
+    url("Imagenes doña paula/Logo_principal.png");
 
     background-size:cover;
 
@@ -508,15 +508,17 @@ h2{
 
     height:320px;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    transition:.5s;
+    transition:.4s;
+
+    background: #ffffff;
 
 }
 
 .card:hover img{
 
-    transform:scale(1.08);
+    transform:scale(1.05);
 
 }
 
@@ -1214,5 +1216,18 @@ section{
     background:var(--dorado);
 
     color:var(--negro);
+
+}
+@media (max-width:768px){
+
+    .hero{
+
+        background-position:center center;
+
+        background-size:contain;
+
+        background-attachment:scroll;
+
+    }
 
 }
